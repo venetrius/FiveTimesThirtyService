@@ -1,4 +1,4 @@
-package hello.logic;
+package ftt.logic;
 
 import org.apache.commons.lang3.math.NumberUtils;
 

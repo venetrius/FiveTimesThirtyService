@@ -1,4 +1,4 @@
-package hello;
+package ftt;
 
 public class Bet {
 	

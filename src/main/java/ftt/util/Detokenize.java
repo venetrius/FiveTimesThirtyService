@@ -1,4 +1,4 @@
-package hello.util;
+package ftt.util;
 
 public class Detokenize {
 	
