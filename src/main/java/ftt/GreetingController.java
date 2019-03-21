@@ -23,8 +23,8 @@ public class GreetingController {
                             String.format(template, name));
     }
     
-  /*  @RequestMapping("/bet")
-    public Bet bet(@RequestParam(value="state") String name) {
-        return new Bet(String value));
-    } */
+    @RequestMapping("/bet")
+    public Bet bet(@RequestParam(value="state") String state) {
+        return (new Bet(state));
+    }
 }
