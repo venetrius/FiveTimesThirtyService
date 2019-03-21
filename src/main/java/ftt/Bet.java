@@ -1,10 +1,10 @@
 package ftt;
 
+import ftt.logic.BetLogic;
 import ftt.logic.State;
 
 public class Bet {
 	private State state;
-	private int bet = 6;
 	
 	public Bet(String token) {
 		try {
@@ -18,6 +18,13 @@ public class Bet {
 		if(state == null) {
 			return -1;
 		}
-		return this.bet;
+		int bet = -1;
+		try {
+			bet = BetLogic.getBet(state);
+		}catch (Exception e) {
+			System.out.println("An error occured");
+			System.out.println(e.getMessage());
+		}
+		return bet ; //BetLogic.getBet(state);
 	}
 }
