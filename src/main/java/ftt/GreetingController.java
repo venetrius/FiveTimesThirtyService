@@ -1,6 +1,8 @@
 package ftt;
 
 import java.util.concurrent.atomic.AtomicLong;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +24,7 @@ public class GreetingController {
         return new Bye(counter.incrementAndGet(),
                             String.format(template, name));
     }
-    
+    @CrossOrigin
     @RequestMapping("/bet")
     public Bet bet(@RequestParam(value="state") String state) {
         return (new Bet(state));
