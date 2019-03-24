@@ -1,5 +1,6 @@
 package ftt;
 
+import ftt.connection.MySQLConnection;
 import ftt.logic.BetLogic;
 import ftt.logic.State;
 
@@ -26,5 +27,10 @@ public class Bet {
 			System.out.println(e.getMessage());
 		}
 		return bet ; //BetLogic.getBet(state);
+	}
+	
+	public static boolean postBet(String token) {
+		System.out.println("adding to hist is sucsessful: " +MySQLConnection.addHistory(token));
+		return true;
 	}
 }

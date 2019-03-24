@@ -1,32 +1,29 @@
 package ftt;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/bet")
 public class GreetingController {
 
-    private static final String template = "Hello, %s!";
-    private final AtomicLong counter = new AtomicLong();
-  //@RequestMapping(method=PUT)
-    @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        return new Greeting(counter.incrementAndGet(),
-                            String.format(template, name));
-    }
-    
-    @RequestMapping("/bye")
-    public Bye bye(@RequestParam(value="name", defaultValue="Shoot") String name) {
-        return new Bye(counter.incrementAndGet(),
-                            String.format(template, name));
-    }
-    @CrossOrigin
-    @RequestMapping("/bet")
-    public Bet bet(@RequestParam(value="state") String state) {
+	@CrossOrigin
+    @RequestMapping(method= RequestMethod.GET)
+    public  Bet bet(@RequestParam(value="state") String state) {
         return (new Bet(state));
     }
+	
+	@CrossOrigin
+    @RequestMapping(method= RequestMethod.POST)
+    //@PostMapping
+    public  boolean postbet(@RequestParam(value="state") String state) {
+		return Bet.postBet(state);
+    }
+
+	
+	
+	   
 }

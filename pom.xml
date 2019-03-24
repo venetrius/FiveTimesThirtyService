@@ -39,6 +39,10 @@
 			<scope>test</scope>
 			<version>4.12</version>
 		</dependency>
+		<dependency>
+    		<groupId>mysql</groupId>
+   		 	<artifactId>mysql-connector-java</artifactId>
+		</dependency>
 	</dependencies>
 
 	<properties>
@@ -47,6 +51,14 @@
 
 
 	<build>
+		<resources>
+			<resource>
+				<directory>config</directory>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

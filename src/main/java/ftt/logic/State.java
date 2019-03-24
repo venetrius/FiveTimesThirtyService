@@ -44,16 +44,10 @@ public final class State {
 		int rounds = vals.length / 2;
 		aiBetHistory = new int[rounds];
 		pBetHistory = new int[rounds];
-		for(int i = 1; i < rounds+1; i++) {
+		for(int i=0; i< rounds; i++) {
 			try {
-				aiBetHistory[i-1] = Integer.parseInt(vals[i]);
-			}catch (NumberFormatException e) {
-				throw new IllegalArgumentException("One of the value is not a number");
-			}
-		}
-		for(int i = 1+rounds; i < vals.length; i++) {
-			try {
-				pBetHistory[i-1-rounds] = Integer.parseInt(vals[i]);
+				aiBetHistory[i] = Integer.parseInt(vals[i*2+1]);
+				pBetHistory[i] = Integer.parseInt(vals[i*2+2]);
 			}catch (NumberFormatException e) {
 				throw new IllegalArgumentException("One of the value is not a number");
 			}
