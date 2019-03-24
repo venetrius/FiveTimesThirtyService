@@ -31,8 +31,9 @@ public class TestState {
 		assertEquals(2, state.getRoundNumber());
 		assertEquals(0, state.getAiPoints());
 		assertEquals(2, state.getPlayerPoints());
-		assertArrayEquals(new int[] {2, 3}, state.getAiBetHistory());
-		assertArrayEquals(new int[] {4, 5}, state.getpBetHistory());
+		assertEquals(6, state.getAiSum());
+		assertArrayEquals(new int[] {2, 4}, state.getAiBetHistory());
+		assertArrayEquals(new int[] {3, 5}, state.getpBetHistory());
 	}
 	
 }
