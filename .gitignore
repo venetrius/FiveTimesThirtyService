@@ -6,3 +6,5 @@ target/
 replay_pid17060\.log
 
 hs_err_pid17060\.log
+
+config/application\.properties
